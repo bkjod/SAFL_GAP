@@ -14,7 +14,7 @@ def get_dataset(dir, name, roll, conf, user_id):
     else:
         pin = False
 
-    if name == 'Shakespear':
+    if name == 'Shakespeare':
         class Mydataset(torch.utils.data.Dataset):
 
             def __init__(self, x, y):
