@@ -71,6 +71,8 @@ file named as `data_partition_with_*Your distribution*_dataset_*Your dataset*_*Y
 
 If you have generated a distribution file and do not want to change it, please ensure this file in your current directory and set the parameter "redistribution" in your configuration file as "n".
 ## Start the federated learning
+Please ensure that folder `total`/`towards`/`
+
 If you have prepared well, you can get started with:
 ```
 python *Your Utils File* -c conf.json
