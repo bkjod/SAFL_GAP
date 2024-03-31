@@ -8,6 +8,8 @@ Main functionalities include:
 4. implementation of FedPatch
 5. implementation of SOTA algorithms including WKAFL[1] and M-step-FedAsync[2]
 
+Here is a simple user manual. Please **feel free** to ask any questions if you encounter any problems during use.
+
 ## Preparation
 ### Choose Strategies
 Getting started with choose a strategy in the `utils` such as `afl_avg.py` and copy it to your current folder.
@@ -38,6 +40,14 @@ Change the configure file based on your tasks, where:
 "beta": The hyper-parameter using in WKAFL.
 "norm_bound" The hyper-parameter using in WKAFL.
 ```
+### Split the dataset to each client
+
+### Generate the resources for each client
+
+## Start the federated learning
+
+## Get results and evaluation
+
 
 [1]: Z. Zhou, Y. Li, X. Ren, and S. Yang, “Towards efficient and stable k-asynchronous federated learning with unbounded stale gradients on non-iid data,” IEEE Transactions on Parallel and Distributed Systems, vol. 33, no. 12, pp. 3291–3305, 2022
 
