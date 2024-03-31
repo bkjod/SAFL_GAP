@@ -6,7 +6,7 @@ Main functionalities include:
 2. implementation of FedAvg and FedSGD under Synchronous Fedrated Learning
 3. implementation of FedAvg and FedSGD under Semi-Asynchronous Fedrated Learnin
 4. implementation of FedPatch
-5. implementation of SOTA algorithms including WKAFL and M-step-FedAsync
+5. implementation of SOTA algorithms including WKAFL[@Zhou] and M-step-FedAsync[@Wu]
 
->Z. Zhou, Y. Li, X. Ren, and S. Yang, “Towards efficient and stable k-asynchronous federated learning with unbounded stale gradients on non-iid data,” IEEE Transactions on Parallel and Distributed Systems, vol. 33, no. 12, pp. 3291–3305, 2022
->X. Wu and C.-L. Wang, “Kafl: Achieving high training efficiency for fast-k asynchronous federated learning,” in 2022 IEEE 42nd International Conference on Distributed Computing Systems (ICDCS). IEEE, 2022, pp. 873–883.
+[@Zhou]: Z. Zhou, Y. Li, X. Ren, and S. Yang, “Towards efficient and stable k-asynchronous federated learning with unbounded stale gradients on non-iid data,” IEEE Transactions on Parallel and Distributed Systems, vol. 33, no. 12, pp. 3291–3305, 2022
+[@Wu]: X. Wu and C.-L. Wang, “Kafl: Achieving high training efficiency for fast-k asynchronous federated learning,” in 2022 IEEE 42nd International Conference on Distributed Computing Systems (ICDCS). IEEE, 2022, pp. 873–883.
