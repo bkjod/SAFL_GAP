@@ -18,5 +18,5 @@
 	"stage_bound": 0.1,
 	"sim_bound": 8000,
 	"beta":1,
-	"stage_bound":1.5
+	"norm_bound":1.5
 }
