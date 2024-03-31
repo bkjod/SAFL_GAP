@@ -62,8 +62,7 @@ If you choose dataset as `Sentiment140`, please unzip `train-processed.csv`(you 
 After modifying the configuration file, please ensure that you have run `resource_generate.py` to generate the resources for each client when you choose **SAFL**.
 What's more, you need to change the path in utils file (such as `afl_avg.py`) into your own resource file.
 
-
-Meanwhile, we provide a 
+Meanwhile, we provide an example file `resources_No_100_max_50.csv`, including 1000 clients resource whose resources are belong to $\[1,50\]$. 
 ## Start the federated learning
 
 ## Get results and evaluation
