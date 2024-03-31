@@ -20,8 +20,8 @@ Here is a simple user manual. Please **feel free** to ask any questions if you e
 ### Choose Strategies
 Getting started with choose a strategy in the `utils` such as `afl_avg.py` and copy it to your current folder.
 
-### Modify the configure file
-Change the configure file based on your tasks, where:
+### Modify the configuration file
+Change the configure file `conf.json` based on your tasks, where:
 ```
 "model_name": The federated model you choose. We provide four different models to choose from, including `resnet18`/`vgg16`/`CNN`/`LSTM`.
               *Remark: you can change the model structure in he file `resnet_model.py`.
@@ -54,12 +54,16 @@ If you choose dataset as `cifar10`/`cifar100`/`mnist`, you need to ensure that t
 
 We will invoke PyTorch to create a folder named "data" in the parent directory and download the necessary training/testing data.
 
-If you choose dataset as `Shakespeare`, please prove that `all_data.json` is in your current directory.
+If you choose dataset as `Shakespeare`, please unzip `all_data.zip`(you can find it in folder `data_partition`) in your current directory.
 
-If you choose dataset as `Sentiment140`, please prove that `train-processed.csv` is in your current directory.
+If you choose dataset as `Sentiment140`, please unzip `train-processed.csv`(you can find it in folder `data_partition`) in your current directory.
 
 ### Generate the resources for each client
+After modifying the configuration file, please ensure that you have run `resource_generate.py` to generate the resources for each client when you choose **SAFL**.
+What's more, you need to change the path in utils file (such as `afl_avg.py`) into your own resource file.
 
+
+Meanwhile, we provide a 
 ## Start the federated learning
 
 ## Get results and evaluation
