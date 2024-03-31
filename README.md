@@ -12,18 +12,23 @@ Here is a simple user manual. Please **feel free** to ask any questions if you e
 
 ## Preparation
 ### Installing necessary Python libraries and their versions
+1. numpy==1.19.5
+2. torch==1.10.0+cu102
+3. torchtext==0.11.0
+4. torchvision==0.11.0+cu102
 
 ### Choose Strategies
 Getting started with choose a strategy in the `utils` such as `afl_avg.py` and copy it to your current folder.
+
 ### Modify the configure file
 Change the configure file based on your tasks, where:
 ```
 "model_name": The federated model you choose. We provide four different models to choose from, including `resnet18`/`vgg16`/`CNN`/`LSTM`.
-              Remark: you can change the model structure in he file `resnet_model.py`.
+              *Remark: you can change the model structure in he file `resnet_model.py`.
 "no_models": The number of clients, default by 100.
 "type": The datasets used for the training tasks. We provide four different datasets to choose from, including `cifar10`/`cifar100`/`mnist`/`Shakespeare`.
-        *Remark1: if you want to use `Sentiment140` dataset, please choose strategy file such as `afl_avg_senti.py` in utils.*
-        *Remark2: `mnist` refers to FEMNIST dataset.*
+        *Remark1: if you want to use `Sentiment140` dataset, please choose strategy file such as `afl_avg_senti.py` in utils.
+        *Remark2: `mnist` refers to FEMNIST dataset.
 "CLASS_NUM": The total number of labels in the dataset used for training tasks. Eg: `10` for `cifar10`, `100` for `cifar100`, `62` for `mnist` and so on.
 "clip": Clip bound when training models, default by 20.
 "global_epochs": The number of epoches required for the whole training, default by 400.
@@ -43,7 +48,15 @@ Change the configure file based on your tasks, where:
 "beta": The hyper-parameter using in WKAFL.
 "norm_bound" The hyper-parameter using in WKAFL.
 ```
-### Split the dataset to each client
+
+### Download the dataset
+If you choose dataset as `cifar10`/`cifar100`/`mnist`, you need to ensure that the parent directory of the files you run is accessible and modifiable. 
+
+We will invoke PyTorch to create a folder named "data" in the parent directory and download the necessary training/testing data.
+
+If you choose dataset as `Shakespeare`, please prove that `all_data.json` is in your current directory.
+
+If you choose dataset as `Sentiment140`, please prove that `train-processed.csv` is in your current directory.
 
 ### Generate the resources for each client
 
