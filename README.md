@@ -1,8 +1,8 @@
 # FedPatch: Bridging the Performance Gap between Gradient and Model Aggregation in Semi-Asynchronous Federated Learning
 
-The repository is the implementation of the PAPER: 'FedPatch: Bridging the Performance Gap between Gradient and Model Aggregation in Semi-Asynchronous Federated Learning'. 
+The repository is the implementation of the PAPER: `FedPatch: Bridging the Performance Gap between Gradient and Model Aggregation in Semi-Asynchronous Federated Learning`. 
 Main functionalities include: 
-1. splitting the 'CIFAR-10' dataset, 'CIFAR-100' dataset, 'FEMNIST' dataset, 'Sentiment140' dataset and 'Shakespeare' dataset into IID and non-IID distributions in the federated setting.
+1. splitting the `CIFAR-10` dataset, `CIFAR-100` dataset, `FEMNIST` dataset, `Sentiment140` dataset and `Shakespeare` dataset into IID and non-IID distributions in the federated setting.
 2. implementation of FedAvg and FedSGD under Synchronous Fedrated Learning
 3. implementation of FedAvg and FedSGD under Semi-Asynchronous Fedrated Learnin
 4. implementation of FedPatch
