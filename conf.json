@@ -1,5 +1,5 @@
 {
-	"model_name" : "vgg16",
+	"model_name" : "resnet18",
 	"no_models" : 100,
 	"type" : "cifar10",
 	"CLASS_NUM" : 10,
@@ -13,5 +13,10 @@
 	"local_momentum" : 0,
 	"redistribution" : "n",
 	"alpha":0.1,
-	"resource_max":50
+	"resource_max":50,
+	"server_eval_size":5,
+	"stage_bound": 0.1,
+	"sim_bound": 8000,
+	"beta":1,
+	"stage_bound":1.5
 }
