@@ -62,9 +62,24 @@ If you choose dataset as `Sentiment140`, please unzip `train-processed.csv`(you 
 After modifying the configuration file, please ensure that you have run `resource_generate.py` to generate the resources for each client when you choose **SAFL**.
 What's more, you need to change the path in utils file (such as `afl_avg.py`) into your own resource file.
 
-Meanwhile, we provide an example file `resources_No_100_max_50.csv`, including 1000 clients resource whose resources are belong to $\[1,50\]$. 
-## Start the federated learning
+Meanwhile, we provide an example file `resources_No_100_max_50.csv`, including 1000 clients whose resources are belong to $\[1,50\]$. 
+This is also the default file if you donot generate your own resource file.
 
+### Generate the data distribution
+Please set the parameter "redistribution" in your configuration file as "y" when you firstly use a specific distribution for a specific dataset. Then you will generate a 
+file named as `data_partition_with_*Your distribution*_dataset_*Your dataset*_*Your parameter alpha*_and_*Your clients numbers*_models.pt`. Some examples are shown in `./data_parition/cifar10`.
+
+If you have generated a distribution file and do not want to change it, please ensure this file in your current directory and set the parameter "redistribution" in your configuration file as "n".
+## Start the federated learning
+If you have prepared well, you can get started with:
+```
+python *Your Utils File* -c conf.json
+```
+
+For example, you can get started with:
+```
+python afl_avg.py -c conf.json
+```
 ## Get results and evaluation
 
 
