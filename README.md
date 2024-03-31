@@ -21,8 +21,18 @@ Change the configure file based on your tasks, where:
         Remark1: if you want to use `Sentiment140` dataset, please choose strategy file such as `afl_avg_senti.py` in utils.
         Remark2: `mnist` refers to FEMNIST dataset.
 "CLASS_NUM": The total number of labels in the dataset used for training tasks. Eg: `10` for `cifar10`, `100` for `cifar100`, `62` for `mnist` and so on.
-"clip": Clip bound when training models.
-"global_epochs": Global epoches
+"clip": Clip bound when training models, default by 20.
+"global_epochs": The number of epoches required for the whole training, default by 400.
+"local_epochs": The number of epoches required for local training for each client, default by 2.
+"k": For SFL, this parameter represents the number of activated clients; for SAFL, it represents the amount of data needed for aggregation.
+"batch_size": The size of batches for dataloader, default by 50.
+"non_iid": The distributions used for pre-processing data. We provide four different datasets to choose from, including `HeteroDiri`/`Shards`/`Unbalance_Diri`/`iid`.
+"local_lr": The local learning rate for local training, default by 1e-1.
+"local_momentum": The local momentum for local training, default by 0.
+"redistribution": Whether you want to redistribute the dataset. Please set it as "y" when you first use a specific distribution for a specific dataset.
+"alpha": The distribution parameter.
+"resource_max": The maximum resource among clients.
+
 ```
 
 [1]: Z. Zhou, Y. Li, X. Ren, and S. Yang, “Towards efficient and stable k-asynchronous federated learning with unbounded stale gradients on non-iid data,” IEEE Transactions on Parallel and Distributed Systems, vol. 33, no. 12, pp. 3291–3305, 2022
