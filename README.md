@@ -8,7 +8,14 @@ Main functionalities include:
 4. implementation of FedPatch
 5. implementation of SOTA algorithms including WKAFL[1] and M-step-FedAsync[2]
 
-## 
+## Preparation
+### Choose Strategies
+Getting started with choose a strategy in the `utils` such as `afl_avg.py` and copy it to your current folder.
+### Modify the configure file
+Change the configure file based on your tasks, where:
+```
+"model_name": the federated model you choose. We provide four different models to choose from, including `ResNet`
+```
 
 [1]: Z. Zhou, Y. Li, X. Ren, and S. Yang, “Towards efficient and stable k-asynchronous federated learning with unbounded stale gradients on non-iid data,” IEEE Transactions on Parallel and Distributed Systems, vol. 33, no. 12, pp. 3291–3305, 2022
 
