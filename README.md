@@ -14,7 +14,10 @@ Getting started with choose a strategy in the `utils` such as `afl_avg.py` and c
 ### Modify the configure file
 Change the configure file based on your tasks, where:
 ```
-"model_name": the federated model you choose. We provide four different models to choose from, including `ResNet`
+"model_name": The federated model you choose. We provide four different models to choose from, including `resnet18`/`vgg16`/`CNN`/`LSTM`. Remark: you can change the model structure in he file `resnet_model.py`.
+"no_models": The number of clients, default by 100.
+"type": The datasets used for the training tasks. We provide four different datasets to choose from, including `cifar10`/`cifar100`/`mnist`/`Shakespeare`. Remark: if you want to use `Sentiment140` dataset, please choose strategy file such as `afl_avg_senti.py` in utils.
+
 ```
 
 [1]: Z. Zhou, Y. Li, X. Ren, and S. Yang, “Towards efficient and stable k-asynchronous federated learning with unbounded stale gradients on non-iid data,” IEEE Transactions on Parallel and Distributed Systems, vol. 33, no. 12, pp. 3291–3305, 2022
