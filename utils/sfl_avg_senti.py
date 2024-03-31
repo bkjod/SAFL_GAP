@@ -1,5 +1,3 @@
-import zmq 
-import sys
 import time
 import resnet_model
 import torch
@@ -7,13 +5,10 @@ import argparse
 import json
 import random
 from data_pre import get_dataset
-import os
 import numpy as np
 from collections import OrderedDict
-import torchvision
 import torch
 from torch import nn
-import traceback
 import csv
 
 vocab_size = 20000

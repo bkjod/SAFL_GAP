@@ -1,5 +1,3 @@
-import zmq 
-import sys
 import time
 import resnet_model
 import torch
@@ -9,12 +7,9 @@ import random
 from data_pre import get_dataset
 import numpy
 import numpy as np
-from collections import OrderedDict
-import torchvision
 import torch
 from torch.utils.data import Subset
 from torch import nn
-import traceback
 import csv
 import pandas as pd
 
