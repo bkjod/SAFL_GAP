@@ -32,7 +32,11 @@ Change the configure file based on your tasks, where:
 "redistribution": Whether you want to redistribute the dataset. Please set it as "y" when you first use a specific distribution for a specific dataset.
 "alpha": The distribution parameter.
 "resource_max": The maximum resource among clients.
-
+"server_eval_size": The hyper-parameter using in FedPatch.
+"stage_bound": The hyper-parameter using in WKAFL.
+"sim_bound": The hyper-parameter using in WKAFL.
+"beta": The hyper-parameter using in WKAFL.
+"norm_bound" The hyper-parameter using in WKAFL.
 ```
 
 [1]: Z. Zhou, Y. Li, X. Ren, and S. Yang, “Towards efficient and stable k-asynchronous federated learning with unbounded stale gradients on non-iid data,” IEEE Transactions on Parallel and Distributed Systems, vol. 33, no. 12, pp. 3291–3305, 2022
