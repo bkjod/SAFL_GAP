@@ -71,7 +71,7 @@ file named as `data_partition_with_*Your distribution*_dataset_*Your dataset*_*Y
 
 If you have generated a distribution file and do not want to change it, please ensure this file in your current directory and set the parameter "redistribution" in your configuration file as "n".
 ## Start the federated learning
-Please ensure that folder `total`/`towards`/`
+Please ensure that folder `total`/`towards`/`KAFL` exists in your current folder.
 
 If you have prepared well, you can get started with:
 ```
@@ -83,7 +83,11 @@ For example, you can get started with:
 python afl_avg.py -c conf.json
 ```
 ## Get results and evaluation
+When you finish your tasks, you will get some results.
+* `*some details of your configuration*_acc_with_*some details of your configuration*.csv` stores raw data of accuracy/loss/duration responding to epoches.
+* `*some details of your configuration*_staleness_with_*some details of your configuration*.csv` stores raw data of the activate clients and their staleness responding to epoches.
 
+You can process these raw data to get more detailed discussion. We provide some examples in `./ret/draw.ipynb`.
 
 [1]: Z. Zhou, Y. Li, X. Ren, and S. Yang, “Towards efficient and stable k-asynchronous federated learning with unbounded stale gradients on non-iid data,” IEEE Transactions on Parallel and Distributed Systems, vol. 33, no. 12, pp. 3291–3305, 2022
 
