@@ -1,15 +1,22 @@
+
+import zmq 
+import os
 import time
 import resnet_model
 import torch
 import argparse
 import json
+import random
 from data_pre import get_dataset
 import numpy
 import numpy as np
+from collections import OrderedDict
 import torchvision
 import torch
 from torch import nn
+import traceback
 import csv
+import shutil
 
 CLASS_NUM = 100
 
@@ -131,26 +138,32 @@ def aggregrate_model(global_model, recieved_model, conf, e, decay):
             gra_norm = 0
             for name, value in gra.state_dict().items():
                 if name.find("bn") == -1 & name.find("shortcut") == -1 & name.find("linear.bias") == -1:
-                    cos.append(torch.norm(torch.cosine_similarity(value, predict_global_gradient[name],1)+1))
+                    ccos = torch.norm(torch.cosine_similarity(value, predict_global_gradient[name],1)+1)
+                    if torch.isnan(ccos).any():
+                        ccos = torch.tensor(1)
+                    cos.append(ccos)
                 elif value.shape != torch.Size([]):
                     tmp_a = predict_global_gradient[name].reshape(1,-1)
                     tmp_b = value.reshape(1,-1)
-                    cos.append(torch.norm(torch.cosine_similarity(tmp_a, tmp_b,1)+1))
+                    ccos = torch.norm(torch.cosine_similarity(tmp_a, tmp_b,1)+1)
+                    if torch.isnan(ccos).any():
+                        ccos = torch.tensor(1)
+                    cos.append(ccos)
                 if name.find("bn") == -1 & name.find("shortcut") == -1 & name.find("linear.bias") == -1:
                     gra_norm += torch.norm(value)
                 elif value.shape != torch.Size([]):
                     tmp = value.reshape(1,-1)
                     gra_norm += torch.norm(tmp)
-                
-            print(gra_norm)
+            
             sim = sum(cos)
+            
+            print("sim: ", sim)
             if sim >= conf["sim_bound"]:
-                p_i_prime = torch.exp(conf["beta"]*sim)
+                p_i_prime = torch.exp(conf["beta"]*sim) + 1
             else:
-                p_i_prime = 0
+                p_i_prime = 1
             p_prime.append(p_i_prime)
             sum_loss += gra_way[2]
-            
             if sum_loss < conf["stage_bound"]:
                 if conf["norm_bound"]*predict_norm <= gra_norm:
                     B = conf["norm_bound"]*predict_norm / gra_norm
