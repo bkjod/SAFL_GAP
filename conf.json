@@ -11,12 +11,13 @@
 	"non_iid": "HeteroDiri",
 	"local_lr" : 0.1,
 	"local_momentum" : 0,
+	"global_lr" : 0.01,
 	"redistribution" : "n",
 	"alpha":0.1,
 	"resource_max":50,
 	"server_eval_size":5,
-	"stage_bound": 0.1,
-	"sim_bound": 8000,
-	"beta":1,
-	"norm_bound":1.5
+	"stage_bound": 10,
+	"sim_bound": 100,
+	"beta":0.05,
+	"norm_bound":1
 }
