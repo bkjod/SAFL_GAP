@@ -37,7 +37,7 @@ Change the configure file `conf.json` based on your tasks, where:
 "batch_size": The size of batches for dataloader, default by 50.
 "non_iid": The distributions used for pre-processing data. We provide four different datasets to choose from, including `HeteroDiri`/`Shards`/`Unbalance_Diri`/`iid`.
 "local_lr": The local learning rate for local training, default by 1e-1.
-"global_lr": The global learning rate for local training under gradient aggregation such as FedSGD and WKAFL, default by 1e-1.
+"global_lr": The global learning rate for local training under gradient aggregation such as FedSGD and WKAFL, default by 1e-2.
 "local_momentum": The local momentum for local training, default by 0.
 "redistribution": Whether you want to redistribute the dataset. Please set it as "y" when you first use a specific distribution for a specific dataset.
 "alpha": The distribution parameter.
