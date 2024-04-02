@@ -272,7 +272,7 @@ def main():
         recieved_amount = len(have_recieved_model)
         print("\nUsing ", time_clock, " time clocks and recieve ", recieved_amount, " models! \n")
 
-        time.sleep(0.5)
+        time.sleep(0.1)
 
         if recieved_amount < conf["k"]:
             print("Waiting for enough models! Need ", conf["k"], ", but recieved ", recieved_amount)  # have not recieved enough models, keep waiting
@@ -311,7 +311,7 @@ def main():
             global_epoch += 1
             
 
-        time.sleep(0.5)
+        time.sleep(0.1)
 
 if __name__ == "__main__":
     main()
