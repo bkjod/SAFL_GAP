@@ -17,7 +17,7 @@
 	"resource_max":50,
 	"server_eval_size":5,
 	"stage_bound": 10,
-	"sim_bound": 100,
+	"sim_bound": 3000,
 	"beta":0.05,
-	"norm_bound":1
+	"norm_bound":1.1
 }
