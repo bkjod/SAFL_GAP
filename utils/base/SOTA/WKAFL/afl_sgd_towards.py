@@ -157,7 +157,7 @@ def aggregrate_model(global_model, recieved_model, conf, e, decay):
             
             sim = sum(cos)
             
-            print("sim: ", sim)
+            
             if sim >= conf["sim_bound"]:
                 p_i_prime = torch.exp(conf["beta"]*sim) + 1
             else:
